@@ -42,7 +42,7 @@ except Exception as e:
 def generate_audio_file(text, filename):
     """Generates MP3 using Deepgram REST API (Robust)"""
     try:
-        url = "https://api.deepgram.com/v1/speak?model=aura-asteria-en&encoding=mp3"
+        url = "https://api.deepgram.com/v1/speak?model=aura-2-thalia-en&encoding=mp3"
         headers = {
             "Authorization": f"Token {DEEPGRAM_KEY}",
             "Content-Type": "application/json"
@@ -188,4 +188,5 @@ if 'headline' in st.session_state:
                     st.error(f"Upload Error: {e}")
                 finally:
                     if os.path.exists(temp_filename):
+
                         os.remove(temp_filename)
